@@ -1,18 +1,65 @@
-# React + Vite
+# React Movie App (Vite + React Router)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small movie web app built with **React**, **Vite**, and **React Router**. It fetches data from **TMDB (The Movie Database)** and includes pages for trending/upcoming movies, movie details, search, and actor details.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Browse movies (e.g., trending / upcoming)
+- Movie details page (with extra appended TMDB fields)
+- Search movies
+- Actor details page and actor’s movies/credits
+- Toast notifications (via `react-toastify`)
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- Node.js (LTS recommended)
 
-Note: This will impact Vite dev & build performances.
+## Setup
 
-## Expanding the ESLint configuration
+1. Install dependencies:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   ```bash
+   npm install
+   ```
+
+2. Configure environment variables.
+
+   Create a `.env` file in the project root:
+
+   ```bash
+   VITE_TMDB_API_KEY=your_tmdb_api_key_here
+   ```
+
+   The app uses `import.meta.env.VITE_TMDB_API_KEY` (see `src/utils/tmdb.js`).
+
+## Run (development)
+
+```bash
+npm run dev
+```
+
+Then open the URL shown in the terminal (usually `http://localhost:5173`).
+
+## Build
+
+```bash
+npm run build
+```
+
+## Preview production build
+
+```bash
+npm run preview
+```
+
+## Lint
+
+```bash
+npm run lint
+```
+
+## Notes
+
+- If you see an error like **"TMDB API key is missing"**, ensure your `.env` file exists and contains `VITE_TMDB_API_KEY`.
+- TMDB responses are fetched from: `https://api.themoviedb.org/3`.
+
