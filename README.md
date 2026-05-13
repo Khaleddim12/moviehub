@@ -27,10 +27,18 @@ A small movie web app built with **React**, **Vite**, and **React Router**. It f
    Create a `.env` file in the project root:
 
    ```bash
+   # TMDB
    VITE_TMDB_API_KEY=your_tmdb_api_key_here
+
+   # Dev server po28+97
+   VITE_PORT=3000
+
    ```
 
    The app uses `import.meta.env.VITE_TMDB_API_KEY` (see `src/utils/tmdb.js`).
+   The dev server port is taken from `VITE_PORT` (see `vite.config.js`).
+
+
 
 ## Run (development)
 
