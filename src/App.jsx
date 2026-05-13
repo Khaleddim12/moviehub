@@ -28,6 +28,9 @@ const App = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Route>,
     ),
+    {
+      basename: "/moviehub"
+    }
   );
 
   return <RouterProvider router={router} />;
